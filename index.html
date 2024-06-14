@@ -4,15 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сапер</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #game {
+            display: grid;
+            grid-template-columns: repeat(3, 50px);
+            grid-gap: 5px;
+        }
+
+        .cell {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-size: 24px;
+            background-color: #f0f0f0;
+        }
+
+        .cell.clicked {
+            background-color: #ccc;
+        }
+
+        .cell.mine {
+            background-color: red;
+            color: white;
+        }
+
+        .cell.prize {
+            background-color: green;
+            color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div id="game"></div>
     <button id="restart">Restart</button>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const userId = urlParams.get('userId');
-    </script>
-    <script src="script.js"></script>
+    <script src="./game.js"></script>
 </body>
 </html>
